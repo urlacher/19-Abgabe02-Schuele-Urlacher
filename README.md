@@ -38,10 +38,10 @@
        kopiert Ihre Jar Datei in ein vordefiniertes Verzeichnis
  
        
-     **Abhängigkeit**
+   **Abhängigkeit**
      
-       init -> compile -> jar -> install -> clean
+     init -> compile -> jar -> install -> clean
        
-     - [ ] Testen Sie Ihr Skript ob die Ausführung funktioniert
-     - [ ] Versionieren Sie die letzten Änderungen.
+   - [ ] Testen Sie Ihr Skript ob die Ausführung funktioniert
+   - [ ] Versionieren Sie die letzten Änderungen.
 
