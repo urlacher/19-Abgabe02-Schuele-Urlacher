@@ -24,14 +24,19 @@
    
      **init**
        erzeugt Verzeichnisstruktur
+       
      **clean**
        löscht die mit init erstellten Verzeichnisse
+       
      **compile**
        kompeliert die Java Klassen
+       
      **jar**
        erzeugt Jar Datei, die ausführbar ist
+       
      **install**
        kopiert Ihre Jar Datei in ein vordefiniertes Verzeichnis
+ 
        
      **Abhängigkeit**
      
