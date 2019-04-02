@@ -1,5 +1,4 @@
-# 19-Abgabe02-Schuelle-Urlacher
- 19-Abgabe02-Schuelle-Urlacher
+# 19-Abgabe02-Schuele-Urlacher
 
 ## Aufgabenstellung
   ### Maven
@@ -35,6 +34,7 @@
        kopiert Ihre Jar Datei in ein vordefiniertes Verzeichnis
        
      **Abhängigkeit**
+     
        init -> compile -> jar -> install -> clean
        
      - [ ] Testen Sie Ihr Skript ob die Ausführung funktioniert
