@@ -2,7 +2,7 @@
 /lib
 /dist
 /bin
-/target
+./target
 
 
 .build.properties
