@@ -61,7 +61,24 @@
             <src path="${src.dir}"/>
         </javac>
     </target>
+  <!--Create a Java-Archive of all .class files which are located in the build-ant directory exluding the Test.class-->
+    <target     name="jar"
+                depends="compile"
+                description="Creates a Jar-file of the compiled Classes.">
 
+        <jar    destfile="${lib.dir}/${jar-name}"
+                basedir="${build-ant.dir}"
+                excludes = "**/Test.class">
+
+            <manifest>
+                <attribute  name="Main-Class"               value="${package.name}.Main"/>
+                <attribute  name="Implementation-Author"    value="${user.name}" />
+                <attribute  name="Implementation-Version"   value="${version}" />
+                <attribute  name="Implementation-Title"     value="${ant.project.name}" />
+            </manifest>
+
+        </jar>
+   </target>
   <!-- removes same directories which created by init target -->
   <target name="clean">
 	<!-- read more about ant tasks in general: https://ant.apache.org/manual/tasksoverview.html -->
