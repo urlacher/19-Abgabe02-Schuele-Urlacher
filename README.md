@@ -3,12 +3,12 @@
 ## Aufgabenstellung
   ### Maven
    - [x] Builden Sie das Projekt mit Maven und erzeugen Sie somit eine Jar Datei.
-   - [ ] Welche Schritte werden beim erzeugen einer Jar Datei durchlaufen?
+   - [X] Welche Schritte werden beim erzeugen einer Jar Datei durchlaufen?
 
    ### Manuelle JAR Datei erzeugen
    - [x] Führen Sie die einzelnen Schritte manuell durch.
    - [x] Notieren Sie sich die einzelnen Schritte
-   - [ ] Wie sieht dabei der Aufwand bei der manuellen Durchführung aus?
+   - [X] Wie sieht dabei der Aufwand bei der manuellen Durchführung aus?
     
    ### ANT
    - [x] Nachdem Sie manuell eine Jar Datei erzeugt haben, erstellen Sie eine build.xml Datei im Root Verzeichnis Ihres Projekts.
