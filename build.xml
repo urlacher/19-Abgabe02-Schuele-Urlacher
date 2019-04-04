@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="SimpleAutomaticBuildProject">
-  
-  <!-- first target which creates directories for later usage -->
-  <!-- read more about: https://ant.apache.org/manual/targets.html -->
-  <target name="init">
-    <mkdir dir="build-ant"/>
-  </target>  
+
+  <!--Properties-->
+    <property name="project.name"   value="${ant.project.name}"/>
+    <property name="jar-name"       value="${project.name}.jar"/>
+    <property name="version"        value="1.0"/>
+
+    <!--Outsourced Properties in case the .build.properties is not available-->
+    <property name="w.dir"              value="."/>
+    <property name="src.dir"            value="${w.dir}/src"/>
+    <property name="lib.dir"            value="${w.dir}/dist"/>
+    <property name="mvn.project.name"   value="SimpleAutomaticBuildProject"/>
+    <property name="simpleAut.src.main.java.dir" value="${mvn.project.name}/src/main/java"/>
+    <property name="build-ant.dir"      value="${w.dir}/build-ant"/>
+    <property name="package.name"       value="at.fhj.iit"/>
+    <property name="main-class"         value="Main.class"/>
+    <property name="name.arg"           value=""/>
+  <!-- Initilize the Ant directory structure -->
+    <target     name="init" 
+                description="create directory">
+        <mkdir dir="${lib.dir}"/>
+        <mkdir dir="${build-ant.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+        <mkdir dir="${src.dir}"/>
+        
+    </target>
   
   <!-- removes same directories which created by init target -->
   <target name="clean">
