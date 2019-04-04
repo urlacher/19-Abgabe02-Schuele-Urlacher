@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--build.xml file to reconstruct the directory structure of a maven project-->
+<project name="Maven-Project-Structure" default="init">
+    <!--The Properties are seperated in the subfolder-->
+    <property file="maven-structure.properties"/>
+
+    <!-- Initilize directories and .txt file's -->  
+    <target name="init">
+        <tstamp><format property="now" pattern="MMMM dd yyyy hh:mm aa" locale="en,EN"/></tstamp>
+        <mkdir dir="${smj}"/>
+        <mkdir dir="${smr}"/>
+        <mkdir dir="${smf}"/>
+        <mkdir dir="${stj}"/>
+        <mkdir dir="${str}"/>
+        <mkdir dir="${ss}"/>
+        <mkdir dir="${sa}"/>
+        <mkdir dir="${si}"/>
+        <mkdir dir="${tc}"/>
+        <touch file="NOTICE.txt"/>
+        <touch file="LICENSE.txt"/>
+        <touch file="README.txt"/>
+        <echo file="NOTICE.txt" append="true">
+###########################################################
+
+NOTICE.txt of   ${ant.project.name} 
+created:        ${now}
+from:           ${user.name}
+on:             ${os.name}
+JDK v.          ${ant.java.version}
+build with Ant v${ant.version}
+
+###########################################################
+        </echo>
+        <echo file="LICENSE.txt" append="true">
+###########################################################
+
+LICENSE.txt of  ${ant.project.name} 
+created:        ${now}
+from:           ${user.name}
+on:             ${os.name}
+JDK v.          ${ant.java.version}
+build with Ant v${ant.version}
+
+###########################################################
+        </echo>
+        <echo file="README.txt" append="true">
+###########################################################
+
+README.txt of   ${ant.project.name} 
+created:        ${now}
+from:           ${user.name}
+on:             ${os.name}
+JDK v.          ${ant.java.version}
+build with Ant v${ant.version}
+
+###########################################################
+        </echo>
+    </target>
+
+    <!-- Removes all produced content, the src/main/java stay -->  
+    <target name="clean">
+        
+        <delete dir="target"/>
+        <delete dir="${si}"/>
+        <delete dir="${st}"/>
+        <delete dir="${smr}"/>
+        <delete dir="${smf}"/>
+        <delete dir="${stf}"/>
+        <delete dir="${ss}"/>
+        <delete dir="${sa}"/>
+    </target>  
+
+    <!-- Removes the whole content of the project just build.xml and maven-stucture.properties stay -->  
+    <target name="removeAll" depends="removeProduced">
+        <delete dir="${src}"/>
+    </target>
+
+     <!-- Removes the target directory -->  
+    <target name="removeProduced" depends="clean">
+        <delete>
+            <fileset dir="." includes="**.txt"/>
+        </delete>
+        <delete dir="target"/>
+    </target>
+</project>
