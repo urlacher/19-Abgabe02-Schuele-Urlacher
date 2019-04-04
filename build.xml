@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project name="SimpleAutomaticBuildProject">
-
+  
   <!-- first target which creates directories for later usage -->
   <!-- read more about: https://ant.apache.org/manual/targets.html -->
   <target name="init">
