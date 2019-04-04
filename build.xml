@@ -9,7 +9,8 @@
     <!--Outsourced Properties in case the .build.properties is not available-->
     <property name="w.dir"              value="."/>
     <property name="src.dir"            value="${w.dir}/src"/>
-    <property name="lib.dir"            value="${w.dir}/dist"/>
+    <property name="lib.dir"            value="${w.dir}/lib"/>
+    <property name="dir.dir"            value="${w.dir}/dist"/>
     <property name="mvn.project.name"   value="SimpleAutomaticBuildProject"/>
     <property name="simpleAut.src.main.java.dir" value="${mvn.project.name}/src/main/java"/>
     <property name="build-ant.dir"      value="${w.dir}/build-ant"/>
