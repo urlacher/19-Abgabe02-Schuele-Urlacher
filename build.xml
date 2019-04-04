@@ -80,12 +80,24 @@
 
         </jar>
    </target>
-  <!-- removes same directories which created by init target -->
-  <target name="clean">
-	<!-- read more about ant tasks in general: https://ant.apache.org/manual/tasksoverview.html -->
-	<!-- read more about delete task in detail: https://ant.apache.org/manual/Tasks/delete.html -->
-  	<delete dir="build-ant"/>
-  </target>
+    <!--Copies the packed JAR-File into the dist directory-->
+    <target     name="install"
+                depends="jar"
+                description="Copies the exicutable created Jar-file into the ${libd.dir}.">
+
+        <copy   todir="${dist.dir}">
+            <file name="${lib.dir}/${jar-name}"/>
+        </copy>
+
+    </target>
+ <!--Remove all elements which were required for the building process-->
+    <target     name="clean"
+                depends="install"
+                description="Removes the files/directories needed for the building process.">
+
+        <delete dir="${build-ant.dir}" />
+        <delete dir="${lib.dir}" />     
+    </target>
   
 
 </project>
