@@ -43,6 +43,7 @@
     
   <!-- Initilize the Ant directory structure -->
     <target     name="init" 
+                depends="convertMVN"
                 description="create directory">
         <mkdir dir="${lib.dir}"/>
         <mkdir dir="${build-ant.dir}"/>
