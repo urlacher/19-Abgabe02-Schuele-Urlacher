@@ -16,6 +16,31 @@
     <property name="package.name"       value="at.fhj.iit"/>
     <property name="main-class"         value="Main.class"/>
     <property name="name.arg"           value=""/>
+    <!--Checks if mvn.project.name exist if it exist mvn.project.exist is set to true-->
+    <target name="mvn.check">
+        <echo message="Prove if ${mvn.project.name} exist."/>
+        <condition property="mvn.project.exist">
+            <and>
+                <available file="${mvn.project.name}" type="dir"/>
+            </and>
+        </condition>
+    </target>
+
+    <!--If mvn.project.exist is true the directory in src/main/java is past into the src directory
+        else this target does't run-->
+    <target     name="convertMVN" 
+                depends="mvn.check" 
+                if="mvn.project.exist">
+        <echo message="${mvn.project.name} exist."/>
+        <mkdir dir="${src.dir}"/>
+        <copy  todir="${src.dir}">
+            <fileset    dir="${simpleAut.src.main.java.dir}" 
+                        includes="**/*.java" 
+                        excludes="**/test/**"/>
+        </copy>
+    </target>
+
+    
   <!-- Initilize the Ant directory structure -->
     <target     name="init" 
                 description="create directory">
