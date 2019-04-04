@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="SimpleAutomaticBuildProject">
+<project name="SimpleAutomaticBuildProject" default="clean" basedir=".">
 
   <!--Properties-->
     <property name="project.name"   value="${ant.project.name}"/>
@@ -99,5 +99,15 @@
         <delete dir="${lib.dir}" />     
     </target>
   
+  <!--Run the JAR-File and pass the name argument which can be set by calling the target
+        ant run -DnameArg=<name> -->
+    <target     name="run"
+                description="Try to run the build Jar-File ${jar-name}.">
 
+        <echo   message="Attempting to run!"/>
+        <java   jar="${dist.dir}/${jar-name}" 
+                fork="true">
+            <arg value="${name.arg}"/>
+        </java>
+    </target> 
 </project>
