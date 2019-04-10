@@ -7,4 +7,12 @@
     <!--Properties with project depending  Information-->
     <property file = "build.properties.template"/>
  
+    <!-- Initilize the Ant directory structure -->
+    <target     name="init" 
+                description="create directory">
+        <mkdir dir="${lib.dir}"/>
+        <mkdir dir="${build-ant.dir}"/>
+        <mkdir dir="${dist.dir}"/>        
+    </target>
+  
 </project>
