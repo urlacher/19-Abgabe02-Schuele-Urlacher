@@ -14,5 +14,14 @@
         <mkdir dir="${build-ant.dir}"/>
         <mkdir dir="${dist.dir}"/>        
     </target>
+
+    <!--  Delete the directories which where needed for the build process-->
+    <target     name="clean"
+                description="Delete directories from init target">
+        <delete dir="${lib.dir}"/>
+        <delete dir="${build-ant.dir}"/>
+        <delete dir="${dist.dir}"/>
+
+    </target>
   
 </project>
