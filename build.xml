@@ -15,6 +15,15 @@
         <mkdir dir="${dist.dir}"/>        
     </target>
 
+    <!--Compile all .java files which are in the src directory and place the .class files in the build-ant directory -->
+    <target     name="compile"
+                depends="init" 
+                description="Compile the class files into ${build-ant.dir}">
+
+        <javac  destdir="${build-ant.dir}" debug="false"   includeantruntime="false">
+            <src path="${src.dir}"/>
+        </javac>
+    </target>
     <!--  Delete the directories which where needed for the build process-->
     <target     name="clean"
                 description="Delete directories from init target">
