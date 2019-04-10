@@ -24,6 +24,19 @@
             <src path="${src.dir}"/>
         </javac>
     </target>
+
+    <!--Create a Java-Archive of all .class files which are located in the build-ant directory exluding the Test.class-->
+    <target     name="jar"
+                depends="compile"
+                description="Creates a Jar-file of the compiled Classes.">
+
+        <jar    destfile="${lib.dir}/${jar-name}"
+                basedir="${build-ant.dir}">
+            <manifest>
+                <attribute  name="Main-Class"               value="${package.name}.Main"/>
+            </manifest>
+        </jar>
+   </target>
     <!--  Delete the directories which where needed for the build process-->
     <target     name="clean"
                 description="Delete directories from init target">
