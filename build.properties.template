@@ -1,0 +1,9 @@
+package.name                = at.fhj.iit
+name.arg                    = Thomas Urlacher und Denis Schuele
+main-class                  = Main.class
+
+w.dir                       = .
+src.dir                     = ${w.dir}/src
+lib.dir                     = ${w.dir}/lib
+dist.dir                    = ${w.dir}/dist
+build-ant.dir               = ${w.dir}/build-ant
