@@ -37,6 +37,17 @@
             </manifest>
         </jar>
    </target>
+
+   <!--Copies the packed JAR-File into the dist directory-->
+    <target     name="install"
+                depends="jar"
+                description="Copies the exicutable created Jar-file into the ${libd.dir}.">
+
+        <copy   todir="${dist.dir}">
+            <file name="${lib.dir}/${jar-name}"/>
+        </copy>
+
+    </target>
     <!--  Delete the directories which where needed for the build process-->
     <target     name="clean"
                 description="Delete directories from init target">
