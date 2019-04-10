@@ -48,6 +48,18 @@
         </copy>
 
     </target>
+
+    <!--Run the JAR-File and pass the name argument which can be set by calling the target
+        ant run -Dname.arg=<name> -->
+    <target     name="run"
+                description="Try to run the build Jar-File ${jar-name}.">
+
+        <echo   message="Attempting to run!"/>
+        <java   jar="${dist.dir}/${jar-name}" 
+                fork="true">
+            <arg value="${name.arg}"/>
+        </java>
+    </target> 
     <!--  Delete the directories which where needed for the build process-->
     <target     name="clean"
                 description="Delete directories from init target">
